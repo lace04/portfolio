@@ -1,7 +1,60 @@
 ---
+import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import MailIcon from '../components/icons/Mail.astro';
 ---
 
-<Layout title='Welcome to Astro.'>
-  <main></main>
+<Layout
+  title='Portfolio de Luis - Desarrollador y Programador Web.'
+  description='Contrata a Luis Cifuentes para crear tu aplicaciones web.'
+>
+  <main>
+    <section class='w-full
+  lg:w-[740px]
+  mx-auto
+  py-32'>
+      <img
+        class='rounded-full size-[50px] mb-4'
+        src='https://avatars.githubusercontent.com/u/73793929?v=4'
+        alt='photo'
+      />
+      <h1 class='text-white text-5xl font-semibold flex flex-row gap-x-4 pb-6'>
+        Hey, soy Luis <a
+          href='https://www.linkedin.com/in/luis-cifuentes-18486621a/'
+          class='flex justify-center items-center'
+          target='_blank'
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class='text-xl text-wrap'>
+        <span>+10 años de experiencia.</span>
+        <span class='text-yellow-200/80'>
+          Desarrollador Web y Creador de Contenido.</span
+        >
+        <span class='text-sky-100/90'>De Bogotá Colombia.</span>
+        <span class='opacity-80'
+          >Me especializo en el desarrollo de aplicaciones web</span
+        >
+      </h2>
+      <nav class='flex gap-x-4 mt-4'>
+        <SocialPill
+          href='https://www.linkedin.com/in/luis-cifuentes-18486621a/'
+        >
+          <LinkedInIcon class='size-5' />LinkedIn
+        </SocialPill>
+
+        <SocialPill href='https://github.com/lace04'>
+          <GithubIcon class='size-5' />Github
+        </SocialPill>
+
+        <SocialPill href='https://github.com/lace04'>
+          <MailIcon class='size-5' />luisace04@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
 </Layout>
