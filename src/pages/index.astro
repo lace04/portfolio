@@ -5,17 +5,17 @@ import SocialPill from '../components/SocialPill.astro';
 import GithubIcon from '../components/icons/Github.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import MailIcon from '../components/icons/Mail.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 ---
 
 <Layout
   title='Portfolio de Luis - Desarrollador y Programador Web.'
   description='Contrata a Luis Cifuentes para crear tu aplicaciones web.'
 >
-  <main>
-    <section class='w-full
-  lg:w-[740px]
-  mx-auto
-  py-32'>
+  <main class='px-4'>
+    <SectionContainer class='py-44 pb-32'>
       <img
         class='rounded-full size-[50px] mb-4'
         src='https://avatars.githubusercontent.com/u/73793929?v=4'
@@ -55,6 +55,16 @@ import MailIcon from '../components/icons/Mail.astro';
           <MailIcon class='size-5' />luisace04@gmail.com
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
+
+    <SectionContainer id='experiencia' class='py-20'>
+      <h2
+        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80'
+      >
+        <Briefcase class='size-7' />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>

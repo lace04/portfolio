@@ -1,0 +1,47 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+const EXPERIENCE = [
+  {
+    title: 'Senior Product Designer',
+    company: 'Company',
+    location: 'San Francisco, CA',
+    date: 'Jan 2020 - Present',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique quis tempus at, consequat a velit. Curabitur cursus vestibulum augue, at aliquet sem aliquet sit amet. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+  },
+  {
+    title: 'Product Designer',
+    company: 'Company',
+    location: 'San Francisco, CA',
+    date: 'Jan 2018 - Jan 2020',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique quis tempus at, consequat a velit. Curabitur cursus vestibulum augue, at aliquet sem aliquet sit amet. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+  },
+  {
+    title: 'Product Designer',
+    company: 'Company',
+    location: 'San Francisco, CA',
+    date: 'Jan 2016 - Jan 2018',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique quis tempus at, consequat a velit. Curabitur cursus vestibulum augue, at aliquet sem aliquet sit amet. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+  },
+  {
+    title: 'Product Designer',
+    company: 'Company',
+    location: 'San Francisco, CA',
+    date: 'Jan 2014 - Jan 2016',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique quis tempus at, consequat a velit. Curabitur cursus vestibulum augue, at aliquet sem aliquet sit amet. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+  },
+];
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700'>
+  {
+    EXPERIENCE.map((experience) => (
+      <li class='mb-10 ms-4'>
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
