@@ -5,6 +5,7 @@ import MongoDB from './icons/MongoDB.astro';
 import Mysql from './icons/Mysql.astro';
 import NextJS from './icons/NextJS.astro';
 import Tailwind from './icons/Tailwind.astro';
+import Cypress from './icons/Cypress.astro';
 
 const TAGS = {
   NEXT: {
@@ -26,6 +27,11 @@ const TAGS = {
     name: 'MongoDB',
     class: 'bg-[#47A248] text-white',
     icon: MongoDB,
+  },
+  CYPRESS: {
+    name: 'Cypress',
+    class: 'bg-[#17202C] text-white',
+    icon: Cypress,
   },
 };
 const PROJECTS = [
@@ -49,6 +55,16 @@ const PROJECTS = [
     image: '/projects/riego.webp',
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB],
   },
+  {
+    title: 'Bazar universal: Next.js 14, Tailwind, Cypress',
+    description:
+      'Bazar universal es una aplicación web que permite a los usuarios comprar y vender productos de segunda mano.',
+    link: 'https://bazar-online-prueba-ncg8wpiyp-lace04.vercel.app/',
+    github:
+      'https://github.com/lace04/pruebas-tecnicas/tree/main/pruebas/02-bazar-universal/lace04/bazar',
+    image: '/projects/bazar.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.CYPRESS],
+  },
 ];
 ---
 
@@ -60,7 +76,7 @@ const PROJECTS = [
       </h3>
       <p class='text-lg mb-4 text-pretty'>{description}</p>
       <ul class='flex gap-x-2 flex-row mb-2'>
-        {tags.map((tag) => (
+        {tags?.map((tag) => (
           <li>
             <span
               class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
@@ -80,7 +96,7 @@ const PROJECTS = [
       {link && (
         <div class='flex gap-x-4 justify-between mt-4'>
           <a
-            href={github}
+            href={link}
             target='_blank'
             rel='noopener noreferrer'
             class='text-yellow-800 dark:text-yellow-200 hover:underline'
