@@ -6,6 +6,9 @@ import Mysql from './icons/Mysql.astro';
 import NextJS from './icons/NextJS.astro';
 import Tailwind from './icons/Tailwind.astro';
 import Cypress from './icons/Cypress.astro';
+import LinkButton from './LinkButton.astro';
+import Github from './icons/Github.astro';
+import Website from './icons/Website.astro';
 
 const TAGS = {
   NEXT: {
@@ -50,7 +53,7 @@ const PROJECTS = [
       'Sistema de riego automatizado mediante el uso de IoT: Next.js 14, React, Tailwind, MongoDB',
     description:
       'SISTEMA DE RIEGO AUTOMATIZADO MEDIANTE EL USO DE IoT Y UNA APLICACIÓN WEB PARA EL MONITOREO Y CONTROL DE LA HUMEDAD DEL SUELO EN CULTIVOS DE HORTALIZAS.',
-    link: 'https://github.com/Osquir/riegoiot',
+    // link: 'https://github.com/Osquir/riegoiot',
     github: 'https://github.com/Osquir/riegoiot',
     image: '/projects/riego.webp',
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB],
@@ -68,69 +71,67 @@ const PROJECTS = [
 ];
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class='mt-20'>
-      <h3 class='text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2'>
-        {title}
-      </h3>
-      <p class='text-lg mb-4 text-pretty'>{description}</p>
-      <ul class='flex gap-x-2 flex-row mb-2'>
-        {tags?.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
-            >
-              <tag.icon class='size-4' />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        loading='lazy'
-        class='rounded shadow-2xl shadow-white/10 aspect-video'
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-      {link && (
-        <div class='flex gap-x-4 justify-between mt-4'>
-          <a
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            class='text-yellow-800 dark:text-yellow-200 hover:underline'
-          >
-            Ver proyecto
-          </a>
-
-          <a
-            href={github}
-            target='_blank'
-            rel='noopener noreferrer hover:underline'
-          >
-            Ver código fuente
-          </a>
-        </div>
-      )}
-    </article>
-  ))
-}
-<div class='flex justify-center items-center mx-auto mt-10'>
-  <SocialPill href='https://github.com/lace04/'>
-    <GithubIcon class='size-4 md:size-5 lg:size-6' />Saber más... <svg
-      class='w-3 h-3 ms-2 rtl:rotate-180'
-      aria-hidden='true'
-      xmlns='http://www.w3.org/2000/svg'
-      fill='none'
-      viewBox='0 0 14 10'
-    >
-      <path
-        stroke='currentColor'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
-        d='M1 5h12m0 0L9 1m4 4L9 9'></path>
-    </svg>
-  </SocialPill>
-</div>
+<section class='flex flex-col'>
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <>
+        <article class='mt-20'>
+          <h3 class='text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2'>
+            {title}
+          </h3>
+          <p class='text-lg mb-4 text-pretty'>{description}</p>
+          <ul class='flex gap-x-2 flex-row mb-2'>
+            {tags?.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+                >
+                  <tag.icon class='size-4' />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <img
+            loading='lazy'
+            class='rounded shadow-2xl shadow-white/10 aspect-video'
+            src={image}
+            alt={`Captura de pantalla del proyecto ${image}`}
+          />
+        </article>
+        <footer class='flex gap-x-4 mt-4 '>
+          {github && (
+            <LinkButton href={github}>
+              <Github class='size-6' />
+              Ver código fuente
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Website class='size-6' />
+              Ver proyecto
+            </LinkButton>
+          )}
+        </footer>
+      </>
+    ))
+  }
+  <div class='flex justify-center items-center mx-auto mt-16'>
+    <SocialPill href='https://github.com/lace04/'>
+      <GithubIcon class='size-4 md:size-5 lg:size-6' />Saber más... <svg
+        class='w-3 h-3 ms-2 rtl:rotate-180'
+        aria-hidden='true'
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 14 10'
+      >
+        <path
+          stroke='currentColor'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          d='M1 5h12m0 0L9 1m4 4L9 9'></path>
+      </svg>
+    </SocialPill>
+  </div>
+</section>
