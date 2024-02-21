@@ -1,17 +1,14 @@
 ---
+import Layout from '@/layouts/Layout.astro';
+
 import AboutMe from '@/components/AboutMe.astro';
-import Badge from '@/components/Badge.astro';
 import Briefcase from '@/components/icons/Briefcase.astro';
 import CodeIcon from '@/components/icons/Code.astro';
 import Experience from '@/components/Experience.astro';
-import GithubIcon from '@/components/icons/Github.astro';
-import Layout from '@/layouts/Layout.astro';
-import LinkedInIcon from '@/components/icons/LinkedIn.astro';
-import MailIcon from '@/components/icons/Mail.astro';
+import ProfileCheck from '@/components/icons/ProfileCheck.astro';
 import Projects from '@/components/Projects.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
-import SocialPill from '@/components/SocialPill.astro';
-import UserCode from '@/components/icons/UserCode.astro';
+import Hero from '@/components/Hero.astro';
 ---
 
 <Layout
@@ -19,66 +16,24 @@ import UserCode from '@/components/icons/UserCode.astro';
   description='Contrata a Luis Cifuentes para crear tu aplicaciones web.'
 >
   <main class='px-4'>
-    <SectionContainer class='py-44 pb-32'>
-      <img
-        class='rounded-full size-[50px] mb-4'
-        src='https://avatars.githubusercontent.com/u/73793929?v=4'
-        alt='photo'
-      />
-      <h1
-        class='text-black text-3xl md:text-4xl lg:text-5xl font-semibold flex flex-row gap-x-4 pb-6
-        dark:text-white'
-      >
-        Hey, soy Luis <a
-          href='https://www.linkedin.com/in/luis-cifuentes-18486621a/'
-          class='flex justify-center items-center'
-          target='_blank'
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2
-        class='text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white'
-      >
-        <span>+5 años de experiencia.</span>
-        <span class='text-slate-600 dark:text-yellow-200/80'>
-          Estudiante de Ingeniería de Sistemas y Tecnólogo.</span
-        >
-        <span class='dark:text-sky-100/90'>De Bogotá Colombia.</span>
-        <span class='opacity-80'
-          >Me especializo en el desarrollo de aplicaciones web</span
-        >
-      </h2>
-      <nav class='flex gap-4 mt-4 flex-wrap'>
-        <SocialPill
-          href='https://www.linkedin.com/in/luis-cifuentes-18486621a/'
-        >
-          <LinkedInIcon class='size-4 md:size-5 lg:size-6' />LinkedIn
-        </SocialPill>
-
-        <SocialPill href='https://github.com/lace04'>
-          <GithubIcon class='size-4 md:size-5 lg:size-6' />Github
-        </SocialPill>
-
-        <SocialPill href='mailto:luisace04@gmail.com'>
-          <MailIcon class='size-4 md:size-5 lg:size-6' />luisace04@gmail.com
-        </SocialPill>
-      </nav>
+    <SectionContainer class='py-16 md:py-36'>
+      <Hero />
     </SectionContainer>
-
-    <SectionContainer id='experiencia' class='py-20'>
+  </main>
+  <div class='space-y-24'>
+    <SectionContainer id='experiencia'>
       <h2
-        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80'
+        class='flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white'
       >
-        <Briefcase class='size-7' />
+        <Briefcase class='size-8' />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id='proyectos' class='py-20'>
+    <SectionContainer id='proyectos'>
       <h2
-        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80'
+        class='flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white'
       >
         <CodeIcon class='size-7' />
         Proyectos
@@ -88,12 +43,12 @@ import UserCode from '@/components/icons/UserCode.astro';
 
     <SectionContainer id='sobre-mi'>
       <h2
-        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80'
+        class='flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white'
       >
-        <UserCode class='size-7' />
-        Sobre mi
+        <ProfileCheck class='size-8' />
+        Sobre mí
       </h2>
       <AboutMe />
     </SectionContainer>
-  </main>
+  </div>
 </Layout>

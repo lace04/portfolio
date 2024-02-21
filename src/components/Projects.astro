@@ -1,13 +1,12 @@
 ---
 import SocialPill from './SocialPill.astro';
-import GithubIcon from './icons/Github.astro';
+import GithubIcon from './icons/GitHub.astro';
 import MongoDB from './icons/MongoDB.astro';
 import Mysql from './icons/Mysql.astro';
 import NextJS from './icons/NextJS.astro';
 import Tailwind from './icons/Tailwind.astro';
 import Cypress from './icons/Cypress.astro';
 import LinkButton from './LinkButton.astro';
-import Github from './icons/Github.astro';
 import Website from './icons/Website.astro';
 
 const TAGS = {
@@ -102,7 +101,7 @@ const PROJECTS = [
         <footer class='flex gap-x-4 mt-4 '>
           {github && (
             <LinkButton href={github}>
-              <Github class='size-6' />
+              <GithubIcon class='size-6' />
               Ver código fuente
             </LinkButton>
           )}

@@ -1,29 +1,31 @@
 ---
-import Layout from '@/layouts/Layout.astro';
 import Badge from '@/components/Badge.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
-import LinkedIn from '@/components/icons/LinkedIn.astro';
 import SocialPill from '@/components/SocialPill.astro';
+import LinkedInIcon from '@/components/icons/LinkedIn.astro';
+
+import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout
-  title='Design system portfolio'
-  description='Catalof of components of our portfolio'
+  title='Design System porfolio.dev'
+  description='El catálogo de componentes de nuestro porfolio'
 >
   <SectionContainer class='py-44 pb-32 flex flex-col gap-y-10'>
     <article class='mb-10'>
-      <h1 class='mb-4 text-xl'>&lt;Badge /&gt;</h1>
+      <h1 class='mb-4 text-xl font-semibold'>&lt;Badge /&gt;</h1>
+
       <Badge>Disponible para trabajar</Badge>
     </article>
 
     <article class='mb-10'>
-      <h1 class='mb-4 text-xl'>&lt;SocialPill /&gt;</h1>
+      <h1 class='mb-4 text-xl font-semibold'>&lt SocialPill /&gt;</h1>
 
       <div class='flex'>
         <SocialPill
           href='https://www.linkedin.com/in/luis-cifuentes-18486621a/'
         >
-          <LinkedIn class='size-4 md:size-6' />
+          <LinkedInIcon class='size-4 md:size-6' />
           LinkedIn
         </SocialPill>
       </div>
